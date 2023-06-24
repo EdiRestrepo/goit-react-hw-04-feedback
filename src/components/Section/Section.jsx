@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
-import css from './Section.module.css';
+import PropTypes from "prop-types";
 
-
-class Section extends Component {
-  static defaultProps = {
-    title: 'Section',
-  };
-  render() {
-    const { title, children } = this.props;
-    return (
-      <section>
-        <h1>{title}</h1>
-        {children}
-      </section>
-    );
-  }
-}
+export const Section = ({ title = "Section", children }) => {
+return (
+  <section>
+    <h1>{title}</h1>
+    {children}
+  </section>
+);
+};
 
 export default Section;
+
+Section.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node,
+};

@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
-import css from './FeedbackOptions.module.css';
+import PropTypes from "prop-types";
 
-export class FeedbackOptions extends Component {
-  render() {
-    const { options, onLeaveFeedback } = this.props;
+export const FeedbackOptions = ({ options, onLeaveFeedback } ) => {
     return <button onClick={options}>{onLeaveFeedback}</button>;
   }
-}
 
 export default FeedbackOptions;
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.func,
+  onLeaveFeedback: PropTypes.string
+};
+
